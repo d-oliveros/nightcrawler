@@ -1,5 +1,5 @@
 {
-  "name": "node-nightcrawler",
+  "name": "nightcrawler",
   "version": "0.1.0",
   "description": "Tor control interface and anonymizer",
   "main": "index.js",
