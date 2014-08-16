@@ -1,4 +1,4 @@
-node-nightcrawler
+Nightcrawler
 =================
 
 Tor control interface and anonymizer
