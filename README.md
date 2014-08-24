@@ -75,13 +75,8 @@ Because multiple nightcrawlers may be instanciated using multiple HTTP proxies.
 
 ### Tests
 
-To run the tests:
-
 ```js
-
-npm install nightcrawler
-cd node_modules/nightcrawler
-make test  (or npm test...)
+make test
 ```
 
 Cheers.
