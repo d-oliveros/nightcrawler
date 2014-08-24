@@ -1,10 +1,10 @@
 {
   "name": "nightcrawler",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Tor control interface and anonymizer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make test"
   },
   "repository": {
     "type": "git",
@@ -13,7 +13,6 @@
   "keywords": [
     "tor",
     "anonymizer",
-    "crawler",
     "anonymous",
     "tor-control"
   ],
@@ -29,5 +28,9 @@
     "lodash": "^2.4.1",
     "q": "^1.0.1",
     "request": "^2.40.0"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.21.4"
   }
 }

@@ -1,20 +1,41 @@
 ### Nightcrawler
 
-Tor interface & anonymizer / IP hopper.
+Nightcrawler is a Tor control interface and IP hopper. This does not magically proxy all your node connections through Tor, so you need to explicitly use your proxy in the requests you make.
 
 #### Requirements
+
+You need to install Tor, and set up a Tor-backed HTTP proxy to be able to use this module.
 
 - `Tor` (Not `Tor Bundle`, just `Tor`).
 - `Polipo`, or other web proxy.
 
+See [Using Tor with Polipo](http://www.pps.univ-paris-diderot.fr/~jch/software/polipo/tor.html)
 
-#### How to use
+You also have to enable Tor's control interface in your `torrc` configuration file by adding the lines:
 
-###### Todo: write better documentation.
+- `ControlPort 9051` - The port of Tor's control interface. 9051 is the default.
+- `HashedControlPassword myhashedpassword` - Your hashed password. To hash your password, see [--hash-password](https://www.torproject.org/docs/tor-manual.html.en#opt-hash-password).
+
+See [Advanced Tor usage](https://www.torproject.org/docs/faq.html.en#torrc)
+
+
+### Installation
+
+```js
+npm install nightcrawler
+```
+
+### How to use
+
+##### Todo: write better documentation.
 
 ```js
 var settings = {
+
+	// Your Tor-Backed HTTP proxy URL
 	proxy: 'http://localhost:8118',
+
+	// Tor's control interface port and password
 	tor: {
 		password: ``,
 		port: 9051,
@@ -23,11 +44,12 @@ var settings = {
 
 var nightcrawler  =  new Nightcrawler(settings);
 
+// Changes Tor's IP.
 nightcrawler.changeIp().then( function(ip) {
-	// Who am I?
 	console.log(ip) // New external IP
 });
 
+// Get the current IP
 nightcrawler.getIp().then( function(ip) {
 	console.log('My current IP is: '+ip);
 })
@@ -46,3 +68,20 @@ nightcrawler.info().then( function(info) {
 
 });
 ```
+
+###### Why a factory and not a singleton?
+
+Because multiple nightcrawlers may be instanciated using multiple HTTP proxies.
+
+### Tests
+
+To run the tests:
+
+```js
+
+npm install nightcrawler
+cd node_modules/nightcrawler
+make test  (or npm test...)
+```
+
+Cheers.
