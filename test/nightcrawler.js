@@ -34,7 +34,6 @@ describe('Nightcrawler', function() {
 	});
 
 	it('should return the current status', function(done) {
-
 		nightcrawler.info().then( function(info) {
 
 			info.should.be.an('object');
