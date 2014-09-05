@@ -34,11 +34,13 @@ var settings = {
 
 	// Your Tor-Backed HTTP proxy URL
 	proxy: 'http://localhost:8118',
-
-	// Tor's control interface port and password
+	
 	tor: {
+		// Tor Control interface password
 		password: ``,
-		port: 9051,
+		
+		// Not to be confused with Tor's SOCKS4a proxy port, which defaults to 9050
+		controlPort: 9051
 	},
 };
 
