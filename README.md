@@ -66,7 +66,7 @@ nightcrawler.conceal(0);
 nightcrawler.info().then( function(info) {
 
 	console.log(info.usingTor); // True or False. Are you using Tor?
-	console.log(info.ip);       // Your current external IP
+	console.log(info.ip);       // Your external IP
 
 });
 ```
