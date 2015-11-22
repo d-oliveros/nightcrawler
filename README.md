@@ -1,7 +1,5 @@
 ## Nightcrawler
 
-*** DEPRECATED! USE https://github.com/d-oliveros/node-cloak
-
 Nightcrawler is a NodeJS-based Tor control interface and IP hopper. This does not magically proxy all your node connections through Tor, so you need to explicitly use your proxy in the requests you make.
 
 #### Requirements
